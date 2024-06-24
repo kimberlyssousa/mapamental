@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Mental</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jsmind-master/style/jsmind.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div id="jsmind_container"
+                    style="width: 100%; height: 500px; border: 1px solid #ffffff; background-color: #fff;"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        MAPA MENTAL
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" id="theme-input" class="form-control" placeholder="Digite um tema...">
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="addNode()">Adicionar Tema</button>
+                        <div class="form-group mt-3">
+                            <label for="color-picker">Escolha uma cor:</label>
+                            <input type="color" id="color-picker" class="form-control" value="#00FF00">
+                        </div>
+                        <button class="btn btn-success btn-block" onclick="downloadMindMapAsImage('jpeg')">Baixar como
+                            JPEG</button>
+                        <button class="btn btn-danger btn-block mt-2" onclick="downloadMindMapAsPDF()">Baixar como
+                            PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <h3>MediaWiki API com JS</h3>
+                <div class="form-group">
+                    <label for="termo">Sobre o que você quer saber?</label>
+                    <input id="termo" class="form-control" />
+                </div>
+                <button class="btn btn-info" onclick="processa()">Pesquisar</button>
+                <div id="resposta" class="mt-3">...</div>
+            </div>
+        </div>
+    </div>
+    <script src="jsmind-master/js-legacy/jsmind.js"></script>
+    <script src="jsmind-master/js-legacy/jsmind.draggable.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
